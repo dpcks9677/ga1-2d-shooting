@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float bulletSpeed = 1.0f;
+    public float speed = 1.0f;
     
     private void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y + bulletSpeed * Time.deltaTime);
+        Vector2 direction = Vector2.up;
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }
