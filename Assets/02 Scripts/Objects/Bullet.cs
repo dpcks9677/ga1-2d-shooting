@@ -19,7 +19,11 @@ public class Bullet : MonoBehaviour
 
         //Bullet 삭제
         Destroy(this.gameObject);
+        TakeDamage(collision);
+    }
 
+    private void TakeDamage(Collision2D collision)
+    {
         //충돌 대상 삭제
         if (collision.gameObject.CompareTag("Enemy"))
         {
