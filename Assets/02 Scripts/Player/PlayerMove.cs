@@ -3,82 +3,67 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Vector2 spawnPoint = new Vector2(0f, -2.5f);
-    
-    public float speed = 5.0f;
-    public float currentSpeed = 0;
-    public float speedChangeVal = 3.0f;
-    
-    public float maxHeightTop = 0f;
-    public float maxHeightBottom = -5.0f;
-    public float maxWidth = 2.4f;
+    // 필요 필드:
+    public float Speed;
+    public float MaxPositionY;
+    public float MinPositionY;
+    public float MaxPositionX;
+    public float MinPositionX;
     
     // 목적 : 키보드 입력에 따라 플레이어 이동처리
     // Update 함수는 특별한 명시가 없다면 최대한 많이 실행한다
-    private void Start()
-    {
-        transform.position = spawnPoint;
-    }
 
     private void Update()
     {
         Move();
+        ChangeSpeed();
     }
 
     private void Move()
     {
-        /*
-        이동 구현 패턴
-        1. 입력을 받는다
-        2. 입력에 따라 방향을 구한다
-        3. 방향과 속도에 따라 이동한다.
-        */
+        // 1. 키보드 입력을 받는다.
+        float h = Input.GetAxisRaw("Horizontal"); 
+        float v = Input.GetAxisRaw("Vertical");
         
-        // 입력 받기
-        float h = Input.GetAxisRaw("Horizontal"); // 왼/오른쪽 입력 상태에 따라 -1f ~ 1f 사이 값 반환
-        float v = Input.GetAxisRaw("Vertical"); // 위/아래 입력 상태에 따라 -1f ~ 1f 사이 값 반환
-        
-        // 방향 구하기
-        currentSpeed = speed;
-        Vector2 direction = new Vector2(h, v).normalized;// 벡터의 길이를 1로 만든다 (정규화)
-        
-        ChangeSpeed();
+        // 2. 키보드 입력에 따라 방향을 구한다.
+        Vector2 normalizedDirection = new Vector2(h, v).normalized;
 
-        //이동 구현 + Y값 제한
-        if (transform.position.y <= 0 && transform.position.y >= -5)
+        // 3. 방향과 속력에 따라 이동한다.
+        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * Speed * Time.deltaTime;
+
+        // 4. 위치 y에 제한이 있다.
+        if (newPosition.y > MaxPositionY)
         {
-            transform.Translate(direction * currentSpeed * Time.deltaTime);
+            newPosition.y = MaxPositionY;
         }
-        else if (transform.position.y > 0)
+        else if (newPosition.y < MinPositionY)
         {
-            transform.position = new Vector2(transform.position.x, maxHeightTop);
-        }
-        else if (transform.position.y < -5)
-        {
-            transform.position = new Vector2(transform.position.x, maxHeightBottom);
+            newPosition.y = MinPositionY;
         }
         
-        //X값 제한
-        if (transform.position.x > 2.4)
+        // 5. 양 옆 끝으로 가면 반대쪽 방향으로 이동
+        if (newPosition.x > MaxPositionX)
         {
-            transform.position = new Vector2(-maxWidth, transform.position.y);
+            newPosition.x = MinPositionX;
         }
-        else if (transform.position.x <= -2.4)
+        else if (newPosition.x < MinPositionX)
         {
-            transform.position = new Vector2(maxWidth, transform.position.y);
+            newPosition.x = MaxPositionX;
         }
+        
+        transform.position = newPosition;
     }
 
     private void ChangeSpeed()
     {
-        //속도 결정
-        if (Input.GetKey(KeyCode.Q))
+        // 7. Q/E 버튼 입력을 통한 스피드 업/다운
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            currentSpeed = speed + speedChangeVal;
+            Speed++;
         }
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
-            currentSpeed = speed - speedChangeVal;
+            Speed--;
         }
     }
 }
