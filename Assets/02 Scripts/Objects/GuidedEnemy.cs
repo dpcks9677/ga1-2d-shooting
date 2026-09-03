@@ -17,6 +17,7 @@ public class GuidedEnemy : Enemy
         playerPosition = targetTransform.position;
         direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y)
             .normalized;
+
         transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
 }

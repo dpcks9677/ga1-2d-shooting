@@ -12,28 +12,20 @@ public class Bullet : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    //충돌 관련 이벤트 (Enter -> Stay -> Exit)
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("충돌함");
 
         //Bullet 삭제
         Destroy(this.gameObject);
-        TakeDamage(collision);
-    }
-
-    private void TakeDamage(Collision2D collision)
-    {
-        //충돌 대상 삭제
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             // GetComponent<Type>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.health -= bulletDamage;
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
-            if (enemy.health <= 0)
+            if (other.gameObject.CompareTag("Enemy"))
             {
-                Destroy(collision.gameObject);
+                enemy.TakeDamage(bulletDamage);
             }
         }
     }
