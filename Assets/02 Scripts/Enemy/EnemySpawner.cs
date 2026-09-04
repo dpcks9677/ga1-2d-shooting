@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum EnemyType
+{
+    Normal,
+    Lookup,
+    Guide
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float _spawnInterval = 3f;
@@ -21,8 +28,21 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        int randomIndex = Random.Range(0, _enemyPrefabs.Length);
-        Enemy enemy = Instantiate(_enemyPrefabs[randomIndex]);
+        float randomIndex = Random.value;
+        Enemy enemy = null;
+
+        if (randomIndex <= 0.5f)
+        {
+            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Normal]);
+        }
+        else if (randomIndex <= 0.70f)
+        {
+            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Lookup]);
+        }
+        else
+        {
+            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Guide]);
+        }
 
         enemy.transform.position = transform.position;
     }
