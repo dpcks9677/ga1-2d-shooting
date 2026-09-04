@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2301321248597819177}
   - component: {fileID: 8261894849779758370}
-  - component: {fileID: 5491229309236408110}
   - component: {fileID: 3893615330757372933}
   - component: {fileID: 8327058651352359033}
-  - component: {fileID: 8718602956347197164}
+  - component: {fileID: 5047175617027498395}
   m_Layer: 0
   m_Name: guidedEnemy
   m_TagString: Enemy
@@ -95,20 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5491229309236408110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143706622821841048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba9c9236617f204eafe7eaf90fc1e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _health: 100
-  moveSpeed: 1
 --- !u!61 &3893615330757372933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8718602956347197164
+--- !u!114 &5047175617027498395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,6 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuidedEnemy
   _health: 100
-  moveSpeed: 1
-  playerPosition: {x: 0, y: 0, z: 0}
-  targetTransform: {fileID: 0}
+  _moveSpeed: 3

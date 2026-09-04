@@ -4,22 +4,24 @@ using UnityEngine.UIElements;
 public class LookupEnemy : Enemy
 {
     private Vector2 _direction;
-    public Transform targetTransform;
+    private GameObject _player;
 
-    protected override void Move()
-    {
-        transform.Translate(_direction * moveSpeed * Time.deltaTime);
-    }
+  
 
     private void Start()
     {
-        Vector3 playerPosition = targetTransform.position;
-        _direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y)
-            .normalized;
-    }
+        _player = GameObject.FindWithTag("Player");
+        if (_player == null)
+        {
+            Debug.Log("플레이어 태그를 가진 게임 오브젝트를 찾지 못했습니다.");
+        }
 
-    private void Update()
+        _direction = _player.transform.position - transform.position;
+        _direction.Normalize();
+    }
+    
+    protected override void Move()
     {
-        Move();
+        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
 }

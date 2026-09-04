@@ -1,28 +1,21 @@
 using UnityEngine;
 
-public class GuidedEnemy : Enemy
+public class HomingEnemy : Enemy
 {
-    private Vector2 _direction;
-    public Vector3 playerPosition;
-    public Transform targetTransform;
+    private GameObject _player;
 
     private void Start()
     {
-        _direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y)
-            .normalized;
+        _player = GameObject.FindWithTag("Player");
     }
 
     protected override void Move()
     {
-        playerPosition = targetTransform.position;
-        _direction = new Vector2(playerPosition.x - transform.position.x, playerPosition.y - transform.position.y)
-            .normalized;
+        // 1. 방향을 구한다.
+        Vector2 direction = _player.transform.position - transform.position;
+        direction.Normalize();
 
-        transform.Translate(_direction * moveSpeed * Time.deltaTime);
-    }
-
-    private void Update()
-    {
-        Move();
+        // 2. 방향과 속도에 맞게 이동한다.
+        transform.Translate(direction * _moveSpeed * Time.deltaTime);
     }
 }

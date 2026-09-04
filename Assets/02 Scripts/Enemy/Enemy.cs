@@ -1,23 +1,22 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+
+public abstract class Enemy : MonoBehaviour
 {
-    public float _health = 100;
-    public float moveSpeed = 1.0f;
+    [SerializeField] private float _health = 100f;
+    [SerializeField] protected float _moveSpeed;
 
     private void Update()
     {
         Move();
     }
 
-    protected virtual void Move()
-    {
-    }
+    protected abstract void Move();
 
-    public void TakeDamage(float bulletDamage)
-    {
-        _health -= bulletDamage;
 
+    public void TakeDamage(float damage)
+    {
+        _health -= damage;
         if (_health <= 0)
         {
             Destroy(gameObject);

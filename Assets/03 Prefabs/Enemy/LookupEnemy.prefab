@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3938598910285241104}
   - component: {fileID: 3903198750082163961}
-  - component: {fileID: 4109672563048493830}
   - component: {fileID: 7994828581623604663}
   - component: {fileID: 8451367799965082384}
-  - component: {fileID: 7719456153521289654}
+  - component: {fileID: 3180510631692411167}
   m_Layer: 0
   m_Name: LookupEnemy
   m_TagString: Enemy
@@ -95,20 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4109672563048493830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2733239806957970330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba9c9236617f204eafe7eaf90fc1e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _health: 100
-  moveSpeed: 1
 --- !u!61 &7994828581623604663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7719456153521289654
+--- !u!114 &3180510631692411167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +178,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed36a4a573f673345a15d5ea05c85690, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::lookupEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::LookupEnemy
   _health: 100
-  moveSpeed: 1
-  targetTransform: {fileID: 0}
+  _moveSpeed: 3
