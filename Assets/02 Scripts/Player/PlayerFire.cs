@@ -63,4 +63,9 @@ public class PlayerFire : MonoBehaviour
                 isAutoToggled = true;
         }
     }
+
+    public void ModifyFireRate(float newFireRate)
+    {
+        bulletCooldown = newFireRate;
+    }
 }

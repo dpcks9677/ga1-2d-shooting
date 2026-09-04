@@ -66,4 +66,9 @@ public class PlayerMove : MonoBehaviour
             Speed--;
         }
     }
+
+    public void ModifySpeed(int amount)
+    {
+        Speed += amount;
+    }
 }

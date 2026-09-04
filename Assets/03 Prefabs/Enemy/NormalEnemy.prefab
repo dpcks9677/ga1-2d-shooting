@@ -181,3 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemy
   _health: 100
   _moveSpeed: 3
+  _ItemPrefabs:
+  - {fileID: 7027979948535746035, guid: 0ca0badd36a94534f993bf270b78d25d, type: 3}
+  - {fileID: 3371576607021504594, guid: d86e650e13c97c7439fe4bed846ad45f, type: 3}
+  - {fileID: 2588429541910302290, guid: 071e315c8ea65784eaaf625f82d9f598, type: 3}

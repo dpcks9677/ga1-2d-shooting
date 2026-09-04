@@ -16,4 +16,14 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    public void ModifyHealth(int amount)
+    {
+        _health += amount;
+    }
+
+    public int returnHealth()
+    {
+        return _health;
+    }
 }
