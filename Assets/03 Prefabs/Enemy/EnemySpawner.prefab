@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   _spawnInterval: 3
-  _enemyPrefab: {fileID: 8718602956347197164, guid: 00af2d7f32257e44ba0e7f73c85acf00, type: 3}
+  _enemyPrefabs:
+  - {fileID: 5268585613342883551, guid: 72b3e9afe7db7c047b2d0093653129a9, type: 3}
+  - {fileID: 3180510631692411167, guid: 4b863152c707cff468319f50d8a590dc, type: 3}
+  - {fileID: 5047175617027498395, guid: 00af2d7f32257e44ba0e7f73c85acf00, type: 3}
