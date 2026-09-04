@@ -6,7 +6,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("접촉함");
         if (other.CompareTag("Enemy"))
         {
             _health--;

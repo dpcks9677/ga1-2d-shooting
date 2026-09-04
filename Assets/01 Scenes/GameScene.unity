@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112617874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 145465479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainLeftFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -313,6 +313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324469179124625431, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 3180510631692411167, guid: 4b863152c707cff468319f50d8a590dc, type: 3}
     - target: {fileID: 1870666145190928137, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -359,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3744998368440419686, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner (2)
+      value: RightEnemySpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -512,7 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 589437059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SubLeftFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -627,7 +631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 670258174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainRightFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -657,6 +661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324469179124625431, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 5047175617027498395, guid: 00af2d7f32257e44ba0e7f73c85acf00, type: 3}
     - target: {fileID: 1870666145190928137, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -703,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3744998368440419686, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner (1)
+      value: LeftEnemySpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -719,7 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357692099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SubFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,6 +759,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1324469179124625431, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
+      propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 5268585613342883551, guid: 72b3e9afe7db7c047b2d0093653129a9, type: 3}
     - target: {fileID: 1870666145190928137, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -797,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 3744998368440419686, guid: b2e182aec9e0c8d46a882e54f6268621, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: MiddleEnemySpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -813,7 +825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1617668451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SubRightFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -847,9 +859,10 @@ GameObject:
   - component: {fileID: 1746088392}
   - component: {fileID: 1746088394}
   - component: {fileID: 1746088395}
+  - component: {fileID: 1746088398}
   - component: {fileID: 1746088397}
   - component: {fileID: 1746088396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -998,7 +1011,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1045,6 +1058,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1746088398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746088391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e986edd9d21f4fc18d44d594c92b886d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
