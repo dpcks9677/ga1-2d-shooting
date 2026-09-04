@@ -31,6 +31,10 @@ public class EnemySpawner : MonoBehaviour
         float randomIndex = Random.value;
         Enemy enemy = null;
 
+
+        //TODO : Scriptable Object를 사용해서 리팩토링 할 것
+        //R1. 배열을 사용했지만 각 ㅏ이템에 어떤 프리팹인지 알 수가 없음
+        //R2. 각 Enemy 스폰 확률을 매직넘버로 하드코딩해서 유지보수가 어려움
         if (randomIndex <= 0.5f)
         {
             enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Normal]);
