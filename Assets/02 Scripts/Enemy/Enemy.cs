@@ -36,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
         _health -= damage;
 
         // 피격 애니메이션
-        _animator.Play("hit");
+        _animator.SetTrigger("hit");
 
         if (_health <= 0)
         {
