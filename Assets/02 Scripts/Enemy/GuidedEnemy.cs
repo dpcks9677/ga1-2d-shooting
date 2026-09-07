@@ -27,7 +27,7 @@ public class GuidedEnemy : Enemy
         direction.Normalize();
 
         // 2. 방향과 속도에 맞게 이동한다.
-        transform.Translate(direction * _moveSpeed * Time.deltaTime);
+        transform.Translate(direction * _moveSpeed * Time.deltaTime, Space.World);
         
         // 3. 오브젝트 회전
         _direction = _player.transform.position - transform.position;
