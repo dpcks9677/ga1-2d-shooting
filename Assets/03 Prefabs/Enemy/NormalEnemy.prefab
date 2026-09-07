@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1269695508960126195}
   - component: {fileID: 7159140923305024089}
   - component: {fileID: 5268585613342883551}
+  - component: {fileID: -1729612944296264515}
   m_Layer: 8
   m_Name: NormalEnemy
   m_TagString: Enemy
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1147401495359466748, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,9 +180,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3f71d1437836c4baac7b6c5680da3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemy
+  _animator: {fileID: -1729612944296264515}
   _health: 100
   _moveSpeed: 3
   _ItemPrefabs:
   - {fileID: 7027979948535746035, guid: 0ca0badd36a94534f993bf270b78d25d, type: 3}
   - {fileID: 3371576607021504594, guid: d86e650e13c97c7439fe4bed846ad45f, type: 3}
   - {fileID: 2588429541910302290, guid: 071e315c8ea65784eaaf625f82d9f598, type: 3}
+--- !u!95 &-1729612944296264515
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525310893289076954}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 5a060c23061993543a3bf12c02368cf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
