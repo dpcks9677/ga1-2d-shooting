@@ -6,7 +6,6 @@ public class LookupEnemy : Enemy
     private Vector2 _direction;
     private GameObject _player;
 
-
     private void Start()
     {
         _player = GameObject.FindWithTag("Player");
@@ -18,6 +17,9 @@ public class LookupEnemy : Enemy
 
         _direction = _player.transform.position - transform.position;
         _direction.Normalize();
+
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
     }
 
     protected override void Move()
@@ -27,6 +29,6 @@ public class LookupEnemy : Enemy
             return;
         }
 
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        transform.Translate(_direction * _moveSpeed * Time.deltaTime, Space.World);
     }
 }
