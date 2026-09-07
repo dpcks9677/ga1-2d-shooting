@@ -3,12 +3,19 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
+
     // 필요 필드:
     public float Speed;
     public float MaxPositionY;
     public float MinPositionY;
     public float MaxPositionX;
     public float MinPositionX;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     // 목적 : 키보드 입력에 따라 플레이어 이동처리
     // Update 함수는 특별한 명시가 없다면 최대한 많이 실행한다
@@ -28,6 +35,7 @@ public class PlayerMove : MonoBehaviour
         // 2. 키보드 입력에 따라 방향을 구한다.
         Vector2 normalizedDirection = new Vector2(h, v).normalized;
 
+        _animator.SetInteger("x", (int)normalizedDirection.x);
         // 3. 방향과 속력에 따라 이동한다.
         Vector2 newPosition = transform.position + (Vector3)normalizedDirection * Speed * Time.deltaTime;
 
