@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] private Item[] _ItemPrefabs;
 
+    // 사망 프리팹
+    [SerializeField] private GameObject _deathEffectPrefab;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -40,6 +43,7 @@ public abstract class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
+            Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             DropItem();
         }
