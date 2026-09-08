@@ -7,6 +7,6 @@ public class HealItem : Item
         PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
 
         playerHealth.ModifyHealth(1);
-        Debug.Log(playerHealth.returnHealth());
+        Debug.Log(playerHealth.ReturnHealth());
     }
 }

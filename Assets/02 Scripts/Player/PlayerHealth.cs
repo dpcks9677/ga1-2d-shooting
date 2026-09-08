@@ -22,8 +22,5 @@ public class PlayerHealth : MonoBehaviour
         _health += amount;
     }
 
-    public int returnHealth()
-    {
-        return _health;
-    }
+    public int ReturnHealth() => _health;
 }
