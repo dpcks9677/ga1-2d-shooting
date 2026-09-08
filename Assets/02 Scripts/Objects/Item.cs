@@ -8,9 +8,16 @@ public abstract class Item : MonoBehaviour
 
     private GameObject _player;
     private float _moveSpeed = 5.0f;
-
+    
     [SerializeField] private GameObject _itemGetEffectPrefab;
 
+    [SerializeField] private Animator _animator;
+    
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+    
     private void Start()
     {
         // 플레이어 추적용
