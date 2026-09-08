@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c156ba370cb5da9438c420f0ff8ffd0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::increaseFireRate
+  _itemGetEffectPrefab: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}

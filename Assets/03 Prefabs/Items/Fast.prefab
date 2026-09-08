@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 535af6f2bb089044fa8b95d980b757b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FastItem
+  _itemGetEffectPrefab: {fileID: 5112403345868107898, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
 --- !u!70 &4887139596955585700
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
