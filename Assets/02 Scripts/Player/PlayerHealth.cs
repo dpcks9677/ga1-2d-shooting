@@ -4,6 +4,8 @@ public class PlayerHealth : MonoBehaviour
 {
     private int _health = 3;
 
+    [SerializeField] private GameObject _playerDeathEffectPrefab;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -12,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
             Destroy(other.gameObject);
             if (_health <= 0)
             {
+                Instantiate(_playerDeathEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
