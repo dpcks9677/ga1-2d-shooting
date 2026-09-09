@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuidedEnemy
   _animator: {fileID: -9084398964060165779}
-  _audioSource: {fileID: -3900610949216291079}
+  _damagedAudioSource: {fileID: -3900610949216291079}
   _health: 100
   _moveSpeed: 3
   _ItemPrefabs:
@@ -223,7 +223,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 362025185c6613042ae321e363d8bc2b, type: 3}
+  m_Resource: {fileID: 8300000, guid: e4fc48a3bd59cb043b3443964536a8e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

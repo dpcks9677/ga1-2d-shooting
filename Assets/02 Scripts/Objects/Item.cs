@@ -8,16 +8,16 @@ public abstract class Item : MonoBehaviour
 
     private GameObject _player;
     private float _moveSpeed = 5.0f;
-    
+
     [SerializeField] private GameObject _itemGetEffectPrefab;
 
     [SerializeField] private Animator _animator;
-    
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
     }
-    
+
     private void Start()
     {
         // 플레이어 추적용
@@ -42,8 +42,8 @@ public abstract class Item : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            TakeItem(other.gameObject);
             Instantiate(_itemGetEffectPrefab, transform.position, Quaternion.identity);
+            TakeItem(other.gameObject);
             Destroy(gameObject);
         }
     }
