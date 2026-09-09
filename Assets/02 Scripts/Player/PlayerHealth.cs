@@ -3,9 +3,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private int _health = 3;
-
-    [SerializeField] private AudioSource _playerDeathSound;
-
+    
+    [SerializeField] private AudioSource _playerDamagedSound;
     [SerializeField] private GameObject _playerDeathEffectPrefab;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -13,12 +12,12 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             _health--;
+            _playerDamagedSound.Play();
             Destroy(other.gameObject);
             if (_health <= 0)
             {
                 Instantiate(_playerDeathEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
-                PlayDeathSound();
             }
         }
     }
@@ -29,9 +28,4 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public int ReturnHealth() => _health;
-
-    public void PlayDeathSound()
-    {
-        _playerDeathSound.Play();
-    }
 }
