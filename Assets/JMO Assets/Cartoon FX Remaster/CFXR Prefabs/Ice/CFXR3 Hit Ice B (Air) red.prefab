@@ -9938,7 +9938,7 @@ GameObject:
   - component: {fileID: 5112403345868107899}
   - component: {fileID: 5112403345868107846}
   m_Layer: 0
-  m_Name: CFXR3 Hit Ice B (Air) green
+  m_Name: CFXR3 Hit Ice B (Air) red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9991,7 +9991,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0762aad6c86c7184482fd5c0cdea3b0e, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10199,7 +10198,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.12388753, g: 0.9056604, b: 0.15262538, a: 1}
+      maxColor: {r: 1, g: 0, b: 0.1443119, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11234,11 +11233,11 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.19344072, g: 0.5943396, b: 0.23887588, a: 1}
-        key1: {r: 0.5803922, g: 1, b: 0.6149587, a: 0}
+        key0: {r: 1, g: 0.41176474, b: 0.42404163, a: 1}
+        key1: {r: 1, g: 0.5803922, b: 0.59809107, a: 0}
         key2: {r: 1, g: 1, b: 1, a: 0.039215688}
-        key3: {r: 0.04805981, g: 0.3773585, b: 0.13158931, a: 0.039215688}
-        key4: {r: 0, g: 0.24578038, b: 0.5660378, a: 0.039215688}
+        key3: {r: 0.5647059, g: 0, b: 0.034192525, a: 0.039215688}
+        key4: {r: 1, g: 0.017601715, b: 0, a: 0.039215688}
         key5: {r: 1, g: 1, b: 1, a: 0.039215688}
         key6: {r: 1, g: 1, b: 1, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
@@ -11246,7 +11245,7 @@ ParticleSystem:
         ctime1: 18519
         ctime2: 30410
         ctime3: 38952
-        ctime4: 38952
+        ctime4: 45875
         ctime5: 65535
         ctime6: 65535
         ctime7: 0
