@@ -4,6 +4,8 @@ public class PlayerHealth : MonoBehaviour
 {
     private int _health = 3;
 
+    [SerializeField] private AudioSource _playerDeathSound;
+
     [SerializeField] private GameObject _playerDeathEffectPrefab;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 Instantiate(_playerDeathEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
+                PlayDeathSound();
             }
         }
     }
@@ -26,4 +29,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public int ReturnHealth() => _health;
+
+    public void PlayDeathSound()
+    {
+        _playerDeathSound.Play();
+    }
 }
