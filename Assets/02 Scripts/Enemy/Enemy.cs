@@ -12,6 +12,8 @@ public enum ItemType
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    //todo: enemy가 공격당할 때 재생되는 피격 사운드 출력
+    [SerializeField] private AudioSource _damagedAudioSource;
 
     [SerializeField] private float _health = 100f;
     [SerializeField] protected float _moveSpeed;
@@ -24,6 +26,7 @@ public abstract class Enemy : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _damagedAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -45,6 +48,7 @@ public abstract class Enemy : MonoBehaviour
         {
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            _damagedAudioSource.Play();
             DropItem();
         }
     }
