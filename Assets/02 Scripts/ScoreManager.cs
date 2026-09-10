@@ -7,7 +7,8 @@ public class ScoreManager : MonoBehaviour
     // 싱글턴 패턴
     // 1. 전역적으로 접근이 가능함
     // 2. 인스턴스가 하나임을 보장한다.
-    public static ScoreManager Instance;
+    private static ScoreManager _instance;
+    public static ScoreManager Instance => _instance;
 
     // 관리: 특정 데이터에 대한 무결성과 추가, 수정, 삭제 등과 관련된 로직을 말함
 
@@ -20,7 +21,13 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        // 중복 생성 방지 코드
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
     }
 
     // Getter
