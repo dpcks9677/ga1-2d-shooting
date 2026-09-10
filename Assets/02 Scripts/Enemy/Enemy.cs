@@ -45,16 +45,19 @@ public abstract class Enemy : MonoBehaviour
 
         // 피격 애니메이션
         _animator.SetTrigger("hit");
-        _damagedAudioSource.Play();
+        if (_damagedAudioSource != null)
+        {
+            _damagedAudioSource.Play();
+        }
 
         if (_health <= 0)
         {
             ScoreManager.Instance.AddScore(100);
 
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+            DropItem();
             Destroy(gameObject);
             _deadAudioSource.Play();
-            DropItem();
         }
     }
 
