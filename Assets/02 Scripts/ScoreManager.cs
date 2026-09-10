@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     private int _bestScore;
     private int _currentScore;
+    private int _lastRefreshScore = -1; // 최초 동작을 위한 기본값 주입
 
     // UI 책임 추가
     [SerializeField] private TextMeshProUGUI _bestScoreText;
@@ -55,7 +56,11 @@ public class ScoreManager : MonoBehaviour
 
     private void RefreshText()
     {
+        if (_lastRefreshScore == _currentScore) return;
+        
         _bestScoreText.text = $"Best Score: {_bestScore}";
         _currentScoreText.text = $"Score: {_currentScore}";
+        
+        _lastRefreshScore = _currentScore;
     }
 }
