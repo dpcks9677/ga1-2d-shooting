@@ -49,10 +49,8 @@ public abstract class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
-            int score = scoreManager.GetScore();
-            scoreManager.AddScore(100);
-            
+            ScoreManager.Instance.AddScore(100);
+
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             _deadAudioSource.Play();
