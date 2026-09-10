@@ -4,7 +4,9 @@ public class increaseFireRate : Item
 {
     protected override void TakeItem(GameObject target)
     {
-        PlayerFire playerFire = target.GetComponent<PlayerFire>();
-        playerFire.ModifyFireRate(0.1f);
+        if(target.TryGetComponent<PlayerFacade>(out var player))
+        {
+            player.IncreaseFireRate(0.1f);
+        }
     }
 }

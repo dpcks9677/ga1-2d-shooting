@@ -4,7 +4,8 @@ public class FastItem : Item
 {
     protected override void TakeItem(GameObject target)
     {
-        PlayerMove playerHealth = target.GetComponent<PlayerMove>();
-        playerHealth.ModifySpeed(3);
+        if(target.TryGetComponent<PlayerFacade>(out var player)){
+            player.IncreaseSpeed(3);
+        }
     }
 }
