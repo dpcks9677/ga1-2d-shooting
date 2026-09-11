@@ -3,6 +3,9 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
+    [SerializeField] private ItemType _type;
+    public ItemType Type => _type;
+
     private const float MOVE_TIME = 1.0f;
     private float moveTimeCounter = 0.0f;
 
