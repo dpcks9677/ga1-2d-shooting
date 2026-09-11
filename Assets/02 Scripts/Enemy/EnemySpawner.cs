@@ -29,7 +29,6 @@ public class EnemySpawner : MonoBehaviour
         // 1. 전체 가중치 합산
         int totalWeight = 0;
 
-        // 수정: _spawnDataTable -> _spawnDataTable.Datas
         foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
             totalWeight += data.Weight;
