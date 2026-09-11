@@ -39,8 +39,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("충돌함");
-
         //Bullet Pool로 반환
         gameObject.SetActive(false);
 

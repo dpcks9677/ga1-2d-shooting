@@ -39,7 +39,7 @@ public class BulletPool : MonoBehaviour
                 for (int j = 0; j < _poolSize; j++)
                 {
                     Bullet bullet = Instantiate(bulletPrefab, gameObject.transform);
-                    bullet.gameObject.SetActive(false); // 당장 사용할거 아니기에 비활성화
+                    bullet.gameObject.SetActive(false); // Pool 안에서는 비활성화
                     _pool[i, j] = bullet;
                 }
             }
@@ -68,7 +68,6 @@ public class BulletPool : MonoBehaviour
                 }
             }
         }
-
 
         return null;
     }
