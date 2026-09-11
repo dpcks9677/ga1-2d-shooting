@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public enum EnemyType
-{
-    Normal,
-    Lookup,
-    Guide
-}
-
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+
     [SerializeField] private float _spawnInterval = 3f;
-    [SerializeField] private Enemy[] _enemyPrefabs;
+
+    private void Start()
+    {
+    }
 
     private float _timer;
 
@@ -28,26 +26,28 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        float randomIndex = Random.value;
-        Enemy enemy = null;
+        // 1. 전체 가중치 합산
+        int totalWeight = 0;
 
-
-        //TODO : Scriptable Object를 사용해서 리팩토링 할 것
-        //R1. 배열을 사용했지만 각 ㅏ이템에 어떤 프리팹인지 알 수가 없음
-        //R2. 각 Enemy 스폰 확률을 매직넘버로 하드코딩해서 유지보수가 어려움
-        if (randomIndex <= 0.5f)
+        // 수정: _spawnDataTable -> _spawnDataTable.Datas
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
-            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Normal]);
-        }
-        else if (randomIndex <= 0.70f)
-        {
-            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Lookup]);
-        }
-        else
-        {
-            enemy = Instantiate(_enemyPrefabs[(int)EnemyType.Guide]);
+            totalWeight += data.Weight;
         }
 
-        enemy.transform.position = transform.position;
+        // 2. 전체 가중치 범위에서 랜덤한 점수를 추첨
+        int randomWeight = Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
+        {
+            cumulativeWeight += data.Weight;
+            if (randomWeight < cumulativeWeight)
+            {
+                GameObject enemy = Instantiate(data.EnemyPrefab);
+                enemy.transform.position = transform.position;
+                break;
+            }
+        }
     }
 }
