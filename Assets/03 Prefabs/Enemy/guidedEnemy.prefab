@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -9084398964060165779}
   - component: {fileID: -3900610949216291079}
   m_Layer: 8
-  m_Name: guidedEnemy
+  m_Name: GuidedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

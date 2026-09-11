@@ -6,6 +6,9 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
+    [SerializeField] private EnemyType _type;
+    public EnemyType Type => _type;
+
     //todo: enemy가 공격당할 때 재생되는 피격 사운드 출력
     [SerializeField] private AudioSource _damagedAudioSource;
 

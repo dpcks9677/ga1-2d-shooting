@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
             cumulativeWeight += data.Weight;
             if (randomWeight < cumulativeWeight)
             {
-                GameObject enemy = Instantiate(data.EnemyPrefab);
+                GameObject enemy = data.EnemyPrefab.GetEnemy()
                 enemy.transform.position = transform.position;
                 break;
             }
