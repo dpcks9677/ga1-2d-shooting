@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2389951859055371484}
   - component: {fileID: 6376557471088097618}
   - component: {fileID: -4220012709868574786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SubBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a41b5a57411b534dabc35031347dac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 7
+  _type: 1
+  speed: 5
   bulletDamage: 10
 --- !u!60 &2389951859055371484
 PolygonCollider2D:

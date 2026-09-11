@@ -61,11 +61,11 @@ public class PlayerFire : MonoBehaviour
 
     private void LoadBullet()
     {
-        var leftBullet = Instantiate(BulletPrefab);
-        var rightBullet = Instantiate(BulletPrefab);
+        var leftBullet = BulletPool.Instance.GetBullet(BulletType.Main);
+        var rightBullet = BulletPool.Instance.GetBullet(BulletType.Main);
 
-        var subLeftBullet = Instantiate(subBulletPrefab);
-        var subRightBullet = Instantiate(subBulletPrefab);
+        var subLeftBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
+        var subRightBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
 
         leftBullet.transform.position = mainFirePointLeft.position;
         rightBullet.transform.position = mainFirePointRight.position;

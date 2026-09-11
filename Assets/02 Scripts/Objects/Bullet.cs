@@ -5,6 +5,9 @@ public class Bullet : MonoBehaviour
 {
     private AudioSource _audioSource;
 
+    [SerializeField] private BulletType _type;
+    public BulletType Type => _type;
+
     public float speed = 1.0f;
     public float bulletDamage = 40f;
 
@@ -17,7 +20,6 @@ public class Bullet : MonoBehaviour
     {
         // 프리팹이 Pool에 의해 활성화 될 때마다
         // 초기화 하는 코드들이 들어간다
-        gameObject.SetActive(false);
         PlaySound();
     }
 

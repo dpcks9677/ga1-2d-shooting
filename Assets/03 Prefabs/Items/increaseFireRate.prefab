@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2588429541910302290}
   - component: {fileID: 1129141115205982494}
   - component: {fileID: -4531236766043504851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: increaseFireRate
   m_TagString: Item
   m_Icon: {fileID: 0}

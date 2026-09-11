@@ -6,9 +6,9 @@ public class DestrotZone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Pool로 총알 반환
-        if (gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet") || other.GetComponent<Bullet>() != null)
         {
-            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
         }
         else
         {
