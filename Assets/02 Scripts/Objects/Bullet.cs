@@ -11,6 +11,19 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void OnSpawn()
+    {
+        // 프리팹이 Pool에 의해 활성화 될 때마다
+        // 초기화 하는 코드들이 들어간다
+        gameObject.SetActive(false);
+        PlaySound();
+    }
+
+    // 활성화 될 때마다 자동으로 호출되는 이벤트 함수
+    private void PlaySound()
+    {
         _audioSource.pitch = UnityEngine.Random.Range(-1f, 3f);
         _audioSource.Play();
     }
@@ -26,8 +39,9 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log("충돌함");
 
-        //Bullet 삭제
-        Destroy(this.gameObject);
+        //Bullet Pool로 반환
+        gameObject.SetActive(false);
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             // GetComponent<Type>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
