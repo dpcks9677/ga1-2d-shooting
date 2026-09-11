@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69569028dd5b94441a7049008085d5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealItem
+  _type: 1
   _itemGetEffectPrefab: {fileID: 5112403345868107898, guid: 7aa8a9a129a812b4c9f061f52e230d90, type: 3}
   _animator: {fileID: 6362106057796629958}
 --- !u!95 &6362106057796629958

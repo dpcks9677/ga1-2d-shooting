@@ -82,7 +82,7 @@ public abstract class Enemy : MonoBehaviour
             cumulativeWeight += data.Weight;
             if (randomWeight < cumulativeWeight)
             {
-                Item item = ItemPool.Instance.GetItem(data.Type);
+                var item = ItemPool.Instance.GetItem(data.ItemType);
                 item.transform.position = transform.position;
                 break;
             }
