@@ -43,8 +43,17 @@ public class EnemySpawner : MonoBehaviour
             cumulativeWeight += data.Weight;
             if (randomWeight < cumulativeWeight)
             {
-                GameObject enemy = data.EnemyPrefab.GetEnemy()
-                enemy.transform.position = transform.position;
+                // 1. EnemyPool 싱글톤에서 타입에 맞는 적을 꺼내옴
+                Enemy enemy = EnemyPool.Instance.GetEnemy(data.EnemyType);
+                
+                // 2. 풀에 여유가 있어 정상적으로 가져온 경우 처리
+                if (enemy != null)
+                {
+                    // 3. 위치를 스포너 위치로 먼저 설정
+                    enemy.transform.position = transform.position;
+                    // 4. 상태 초기화 (체력, 회전값, 방향 등)
+                    enemy.OnSpawn();
+                }
                 break;
             }
         }

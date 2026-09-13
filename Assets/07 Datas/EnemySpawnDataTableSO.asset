@@ -15,7 +15,10 @@ MonoBehaviour:
   Datas:
   - EnemyPrefab: {fileID: 525310893289076954, guid: 72b3e9afe7db7c047b2d0093653129a9, type: 3}
     Weight: 50
+    EnemyType: 0
   - EnemyPrefab: {fileID: 2733239806957970330, guid: 4b863152c707cff468319f50d8a590dc, type: 3}
     Weight: 30
+    EnemyType: 1
   - EnemyPrefab: {fileID: 2143706622821841048, guid: 00af2d7f32257e44ba0e7f73c85acf00, type: 3}
     Weight: 20
+    EnemyType: 2

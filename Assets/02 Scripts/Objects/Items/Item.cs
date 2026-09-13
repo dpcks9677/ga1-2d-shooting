@@ -32,6 +32,11 @@ public abstract class Item : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        moveTimeCounter = 0.0f;
+    }
+
     private void Update()
     {
         moveTimeCounter += Time.deltaTime;
@@ -47,7 +52,7 @@ public abstract class Item : MonoBehaviour
         {
             Instantiate(_itemGetEffectPrefab, transform.position, Quaternion.identity);
             TakeItem(other.gameObject);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

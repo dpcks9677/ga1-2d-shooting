@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
         {
             _health--;
             _playerDamagedSound.Play();
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             if (_health <= 0)
             {
                 Instantiate(_playerDeathEffectPrefab, transform.position, Quaternion.identity);

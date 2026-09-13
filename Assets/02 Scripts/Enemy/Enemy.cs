@@ -12,7 +12,10 @@ public abstract class Enemy : MonoBehaviour
     //todo: enemy가 공격당할 때 재생되는 피격 사운드 출력
     [SerializeField] private AudioSource _damagedAudioSource;
 
+    //체력 설정
+    [SerializeField] private float _maxHealth = 100f;
     [SerializeField] private float _health = 100f;
+
     [SerializeField] protected float _moveSpeed;
 
     [SerializeField] private ItemSpawnDataTableSO _spawnDataTable;
@@ -24,6 +27,12 @@ public abstract class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _damagedAudioSource = GetComponent<AudioSource>();
+        _health = _maxHealth;
+    }
+
+    public void OnSpawn()
+    {
+        _health = _maxHealth;
     }
 
     private void Update()
@@ -52,7 +61,7 @@ public abstract class Enemy : MonoBehaviour
             Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
             DropItem();
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

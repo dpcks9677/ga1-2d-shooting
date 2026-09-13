@@ -11,7 +11,7 @@ public class EnemyPool : MonoBehaviour
     private Enemy[,] _pool;
 
     private static EnemyPool _instance = null;
-    public static EnemyPool Instance = _instance;
+    public static EnemyPool Instance => _instance;
 
     private void Awake()
     {

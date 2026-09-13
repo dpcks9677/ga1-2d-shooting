@@ -10,6 +10,17 @@ public class DestrotZone : MonoBehaviour
         {
             other.gameObject.SetActive(false);
         }
+        
+        // Pool로 Enemy 반환
+        else if (other.gameObject.CompareTag("Enemy") || other.GetComponent<Enemy>() != null)
+        {
+            other.gameObject.SetActive(false);
+        }
+        // Pool로 Item 반환
+        else if (other.gameObject.CompareTag("Item") || other.GetComponent<Item>() != null)
+        {
+            other.gameObject.SetActive(false);
+        }
         else
         {
             Destroy(other.gameObject);
