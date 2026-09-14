@@ -37,7 +37,8 @@ public class PlayerMove : MonoBehaviour
 
         _animator.SetInteger("x", (int)h);
         // 3. 방향과 속력에 따라 이동한다.
-        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * Speed * Time.deltaTime;
+        float finalSpeed = Speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * finalSpeed * Time.deltaTime;
 
         // 4. 위치 y에 제한이 있다.
         if (newPosition.y > MaxPositionY)

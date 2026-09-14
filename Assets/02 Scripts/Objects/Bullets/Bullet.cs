@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
 
             if (other.gameObject.CompareTag("Enemy"))
             {
-                enemy.TakeDamage(bulletDamage);
+                enemy.TakeDamage(bulletDamage + (int)UpgradeManager.Instance.Upgrades[0].CurrentValue);
             }
         }
     }
