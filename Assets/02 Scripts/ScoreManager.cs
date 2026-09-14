@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
 
     private void RefreshText()
     {
-        _bestScoreText.text = $"Best Score: {_bestScore}";
-        _currentScoreText.text = $"Score: {_currentScore}";
+        _bestScoreText.text = $"Best Score: {_bestScore:N0}";
+        _currentScoreText.text = $"Score: {_currentScore:N0}";
     }
 }
