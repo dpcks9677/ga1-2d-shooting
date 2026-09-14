@@ -25,9 +25,21 @@ public class PlayerFire : MonoBehaviour
 
     private bool isAutoToggled = false;
 
+    public void SetAuto(bool auto)
+    {
+        isAutoToggled = auto;
+    }
+
     // 스페이스바를 누를 때마다 총알 생성
     private void Update()
     {
+        // 오토 공격 모드 토글
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SetAuto(!isAutoToggled);
+        }
+
+
         bulletFireTimer += Time.deltaTime;
         bombFireTimer += Time.deltaTime;
         ToggleAutoFire();
