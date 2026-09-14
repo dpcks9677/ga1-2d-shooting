@@ -22,6 +22,15 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bestScoreText;
     [SerializeField] private TextMeshProUGUI _currentScoreText;
 
+    public int Score => _currentScore;
+
+    public void Spend(int amount)
+    {
+        _currentScore -= amount;
+        RefreshText();
+    }
+
+
     private void Awake()
     {
         // 중복 생성 방지 코드
