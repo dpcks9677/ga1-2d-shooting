@@ -26,9 +26,9 @@ public class Upgrade
     public int Cost => _cost;
 
     public void Init()
-{
-    Calculate();
-}
+    {
+        Calculate();
+    }
 
     public Upgrade(int level, string name, float defaultValue, float increaseValue, float increaseCost)
     {
@@ -45,6 +45,11 @@ public class Upgrade
     {
         _level++;
         Calculate();
+    }
+
+    public void SetLevel(int level)
+    {
+        _level = level;
     }
 
     private void Calculate()
