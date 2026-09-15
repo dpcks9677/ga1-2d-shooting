@@ -61,7 +61,7 @@ public class PlayerFire : MonoBehaviour
 
     private void FireBomb()
     {
-        if (Input.GetKeyDown(KeyCode.B) && bombFireTimer >= bombCooldown)
+        if (SimpleInput.GetButton("Bomb") && bombFireTimer >= bombCooldown)
         {
             {
                 LoadBomb();
