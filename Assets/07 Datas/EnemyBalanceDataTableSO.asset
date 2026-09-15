@@ -15,7 +15,7 @@ MonoBehaviour:
   datas:
   - RequireScore: 0
     HealthMultiplier: 1
-  - RequireScore: 5000
+  - RequireScore: 1000
     HealthMultiplier: 1.2
   - RequireScore: 10000
     HealthMultiplier: 1.5
