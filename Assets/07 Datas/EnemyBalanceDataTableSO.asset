@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e59ece2b45ef244b277208c30ca46f, type: 3}
+  m_Name: EnemyBalanceDataTableSO
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBalanceDataTableSO
+  datas:
+  - RequireScore: 0
+    HealthMultiplier: 1
+  - RequireScore: 5000
+    HealthMultiplier: 1.2
+  - RequireScore: 10000
+    HealthMultiplier: 1.5
+  - RequireScore: 50000
+    HealthMultiplier: 1.6
+  - RequireScore: 1000000
+    HealthMultiplier: 2

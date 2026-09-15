@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad9965225c7c1944b9faa1b879bb539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  _spawnData:
-    EnemyPrefab: {fileID: 0}
-    Weight: 0
   _spawnDataTable: {fileID: 11400000, guid: 6d9634970e6c8c64b870a38ee5cd6e14, type: 2}
+  _balanceDataTable: {fileID: 11400000, guid: 547c127959298204eb59f72ca16b8d0f, type: 2}
   _spawnInterval: 3

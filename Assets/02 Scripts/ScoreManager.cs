@@ -56,9 +56,9 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Getter
-    public int GetScore()
+    public int GetBestScore()
     {
-        return _currentScore;
+        return _bestScore;
     }
 
     // Setter

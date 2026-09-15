@@ -182,7 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalEnemy
   _animator: {fileID: -1729612944296264515}
+  _type: 0
   _damagedAudioSource: {fileID: 3277268534122531481}
+  _baseHealth: 80
   _health: 100
   _moveSpeed: 3
   _spawnDataTable: {fileID: 11400000, guid: eb9d8642883b7354eb06011930c3d94d, type: 2}

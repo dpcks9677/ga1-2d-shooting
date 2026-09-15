@@ -13,8 +13,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private AudioSource _damagedAudioSource;
 
     //체력 설정
-    [SerializeField] private float _maxHealth = 100f;
-    [SerializeField] private float _health = 100f;
+    [SerializeField] private float _baseHealth;
+    [SerializeField] private float _health;
 
     [SerializeField] protected float _moveSpeed;
 
@@ -27,17 +27,23 @@ public abstract class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _damagedAudioSource = GetComponent<AudioSource>();
-        _health = _maxHealth;
+        _health = _baseHealth;
     }
 
-    public void OnSpawn()
+    public void OnSpawn(float healthMultiplier = 1f)
     {
-        _health = _maxHealth;
+        _health = _baseHealth * healthMultiplier;
     }
 
     private void Update()
     {
         Move();
+    }
+
+    public void SetHealthMultiply(float multiple)
+    {
+        // 체력 초기화
+        _health = _baseHealth * multiple;
     }
 
     protected abstract void Move();

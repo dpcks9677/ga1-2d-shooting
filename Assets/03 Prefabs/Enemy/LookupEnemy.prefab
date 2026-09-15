@@ -184,7 +184,7 @@ MonoBehaviour:
   _animator: {fileID: 4632359282269132547}
   _type: 1
   _damagedAudioSource: {fileID: 3220931897147739204}
-  _maxHealth: 100
+  _baseHealth: 70
   _health: 100
   _moveSpeed: 3
   _spawnDataTable: {fileID: 11400000, guid: eb9d8642883b7354eb06011930c3d94d, type: 2}
